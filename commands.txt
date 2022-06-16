@@ -1,0 +1,5 @@
+#Групує по другому стовпчику та сортує
+cat test.log | awk '{print $2}' | awk -F, '{a[$1];}END{for (i in a)print i;}' | sort -r > blacklist-ipaddress.new
+
+#те саме але вже по першому стовпчику
+cat test.log | awk '{print $1}' |  awk -F, '{a[$1];}END{for (i in a)print i;}' | sort > blacklist-username.new
